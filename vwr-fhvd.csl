@@ -12,10 +12,11 @@ Fall
     <category citation-format="note"/>
     <category field="social_science"/>
 	<summary>
-	  Diese Implementation basiert auf dem FHVD-Stil vom 11.04.2024.
+	  Diese Implementation basiert auf dem FHVD-Stil vom 11.04.2024 und setzt Konkretisierungen durch die Aufgabenstellung um.
+	  Kommentare werden als Enzyklopädie-Eintrag implementiert.
 	</summary>
     <updated>2024-05-04T22:17:31+00:00</updated>
-    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+    <rights license="https://creativecommons.org/licenses/by-nc/4.0/">This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License</rights>
   </info>
   <!-- ======== LOCALE ======== -->
   <locale xml:lang="de">
@@ -156,31 +157,25 @@ Fall
     <layout delimiter="; " suffix=".">
 	  <group delimiter=", ">
 	    <text macro="author-short" text-case="capitalize-first"/>
-		<choose>
+		<text variable="title" form="long"/>
+	    <choose>
+		  <!-- Lehrbuch: done -->
+		  <!-- Zeitschriftenartikel -->
 		  <if type="article-journal">
-			<group delimiter="">
-		      <text term="in" suffix=": "/>
-		      <text variable="container-title" form="long"/>
-			</group>
+		    <text variable="container-title" form="short"/>
 		  </if>
-		</choose>
-	    <text macro="year-date"/>
-	    <choose>
-		  <if type="article-journal" match="none">
-		    <text variable="title" form="short"/>
-		  </if>
-		</choose>
-	    <choose>
-	      <if type="webpage">
-		    <text variable="URL"/>
-		  </if>
-		  <else-if type="chapter">
+		  <!-- Teil von Sammelband, Teil von Kommentar-->
+		  <else-if type="chapter entry-encyclopedia">
 			<group delimiter="">
 		      <text term="in" suffix=": "/>
 		      <text macro="editor-short"/>
 			</group>
 			<text variable="container-title" form="long"/> 
-			<!-- change this to short in future, so that the field Kurztitel is used, at least thats the hope, have to check, or its shortened automatically -->
+		  </else-if>
+		  <!-- Fall -->
+		  <!-- Webseite -->
+	      <else-if type="webpage">
+		    <text variable="URL"/>
 		  </else-if>
 	    </choose>
 		<choose>
@@ -205,35 +200,50 @@ Fall
 	    <text macro="author"/>
   	    <text variable="title" form="long"/>
 		<choose>
-		  <!-- Lehrbuch, Monographie -->
+		  <!-- Lehrbuch -->
 		  <if type="book">
+			<text macro="volume"/>
+  	        <text macro="edition"/>
+	        <text macro="year-date"/>
 		  </if>
-		  <!-- Sammelband, Kommentar -->
-		  <else-if type="chapter">
+		  <!-- Sammelwerk, Kommentar -->
+		  <else-if type="chapter entry-encyclopedia">
 		    <group delimiter="">
 		      <text term="in" suffix=": "/>
 		      <text macro="editor"/>
 			</group>
 			<text variable="container-title"/>
+			<text macro="pages"/>
+			<text macro="volume"/>
+			<text variable="publisher-place"/>
+			<text macro="edition"/>
+	        <text macro="year-date"/>
 		  </else-if>
 		  <!-- Zeitschriftenartikel -->
 		  <else-if type="article-journal paper-conference">
 			<group delimiter="">
 		      <text term="in" suffix=": "/>
-		      <text variable="container-title" form="short"/>
+		      <text variable="container-title" form="long"/>
 			</group>
+			<text macro="year-date"/>
+			<text macro="pages"/>
 		  </else-if>
+		  <!-- Gerichtsurteil oder -beschluss -->
+		  <else-if type="legal_case">
+			<text variable="title"/> <!-- FILLER -->
+		  </else-if>
+		  <!-- Webseite -->
 		  <else-if type="webpage">
 		    <text macro="date"/>
 			<text variable="URL"/>
 		    <text macro="accessed"/>
 		  </else-if>
-		  <!--
 		  <else>
+		    <text macro="year-date"/>
 		  </else>
-		  -->
 		</choose>
 	  </group>
     </layout>
   </bibliography>
+  
 </style>

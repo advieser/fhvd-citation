@@ -25,7 +25,7 @@ TODO:
 	  Diese Implementation weicht vom Beispiel für Sammelbände ab, insofern als dass die Jahreszahl der Konsistenzhalber gleich wie bei anderen Einträgen formatiert wird, und nicht in Klammern.
 	</summary>
     <updated>2024-04-11T22:17:31+00:00</updated>
-    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+    <rights license="https://creativecommons.org/licenses/by-nc/4.0/">This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License</rights>
   </info>
   <!-- ======== LOCALE ======== -->
   <locale xml:lang="de">
