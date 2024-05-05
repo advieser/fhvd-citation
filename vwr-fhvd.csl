@@ -33,12 +33,21 @@
   <!-- ======== MACROS ======== -->
   <!-- People -->
   <macro name="author">
-    <names variable="author">
-      <name name-as-sort-order="all" sort-separator=", " delimiter=", " delimiter-precedes-last="never"/>
-	  <substitute>
+	<choose>
+	  <!-- fix for citation order: 
+           for encycl. authors exist, but only editors are shown in References, important for sorting  -->
+	  <if type="entry-encyclopedia" match="none">
+		<names variable="author">
+		  <name name-as-sort-order="all" sort-separator=", " delimiter=", " delimiter-precedes-last="never"/>
+		  <substitute>
+			<text macro="editor"/>
+		  </substitute>
+		</names>
+	  </if>
+	  <else>
 	    <text macro="editor"/>
-	  </substitute>
-    </names>
+	  </else>
+	</choose>
     <text macro="anon"/>
   </macro>
   <macro name="author-short">
@@ -238,7 +247,7 @@
   <bibliography>
     <sort>
       <key macro="author"/>
-      <!-- <key macro="date"/> -->
+      <key macro="date"/>
     </sort>
     <layout>
 	  <choose>
@@ -255,7 +264,7 @@
 			  </if>
 			  <!-- Kommentar -->
 			  <else-if type="entry-encyclopedia">
-			    <text macro="editor"/>
+			    <text macro="author"/>
 			    <text variable="container-title" form="long"/>
 				<text macro="volume"/>
 				<text macro="edition"/>
@@ -295,6 +304,7 @@
 				<text variable="URL"/>
 				<text macro="accessed"/>
 			  </else-if>
+			  <!-- Otherwise -->
 			  <else>
 				<text macro="author"/>
 		     	<text variable="title" form="long"/>
