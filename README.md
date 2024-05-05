@@ -30,5 +30,6 @@ Er definiert die folgenden Eintragsarten:
 - **Zeitschriftenartikel**
 - **Fall** für Urteile und Beschlüsse
 - **Webseite**
+
 Eine Anleitung kann [hier](Anleitung_VwR-FHVD.pdf) gefunden werden.
 

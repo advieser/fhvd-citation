@@ -238,7 +238,7 @@
   <bibliography>
     <sort>
       <key macro="author"/>
-      <key macro="date"/>
+      <!-- <key macro="date"/> -->
     </sort>
     <layout>
 	  <choose>
