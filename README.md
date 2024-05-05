@@ -27,8 +27,8 @@ Er definiert die folgenden Eintragsarten:
 - **Buch** für Lehrbücher
 - **Buchteil** für Teile von Sammelwerken
 - **Enzyklopädieeintrag** für Teile von Kommentaren
-	- Titel des Kommentar als `Titel der Enzyklopädie` eintragen, `Titel` wird frei gelassen
 - **Zeitschriftenartikel**
 - **Fall** für Urteile und Beschlüsse
 - **Webseite**
+Eine Anleitung kann [hier](Anleitung_VwR-FHVD.pdf) gefunden werden.
 
