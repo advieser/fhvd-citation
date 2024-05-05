@@ -181,7 +181,11 @@ Fall
 		<choose>
 		  <if variable="locator">
 		    <group delimiter="">
-		      <label variable="locator" form="short" suffix=" "/>
+			  <choose>
+			    <if type="entry-encyclopedia" match="none">
+		          <label variable="locator" form="short" suffix=" "/>
+			    </if>
+			  </choose>
               <text variable="locator"/>
 			</group>
 		  </if>
