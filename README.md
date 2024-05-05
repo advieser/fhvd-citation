@@ -29,9 +29,6 @@ Er definiert die folgenden Eintragsarten:
 - **Enzyklopädieeintrag** für Teile von Kommentaren
 	- Titel des Kommentar als `Titel der Enzyklopädie` eintragen, `Titel` wird frei gelassen
 - **Zeitschriftenartikel**
-- TODO: **Fall** für Urteile und Beschlüsse
+- **Fall** für Urteile und Beschlüsse
 - **Webseite**
 
-# Changelog
-- 05.05.24: locator label wird für Kommentare nicht mehr angezeigt
-	- Alternative Lösung: Beim Einfügen in Word anderes Label (z.B. loc) verwenden, welches im Stil durch § ersetzt wird.
