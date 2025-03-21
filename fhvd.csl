@@ -22,7 +22,7 @@ TODO:
 	  (6) Die Abkürzung "Ebd." wird NICHT verwendet. Dies wäre möglich, wenn zwei aufeinander folgende Fußnoten die genau gleiche Quelle (samt Fundstelle) hätten.
 	  (7) Die URL einer Webseite sollte in einer Fußnote abgekürzt werden. Dies geschieht NICHT automatisch (da zotero kein Feld short-url hat).
 	  (8) Die Quellentypen Loseblattsammlung und E-Book sind NICHT definiert.
-	  Diese Implementation weicht vom Beispiel für Sammelbände ab, insofern als dass die Jahreszahl der Konsistenzhalber gleich wie bei anderen Einträgen formatiert wird, und nicht in Klammern.
+	  Diese Implementation weicht vom Beispiel für Sammelbände ab, insofern als dass die Jahreszahl der konsistenzhalber gleich wie bei anderen Einträgen formatiert wird, und nicht in Klammern.
 	</summary>
     <updated>2024-04-11T22:17:31+00:00</updated>
     <rights license="https://creativecommons.org/licenses/by-nc/4.0/">This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License</rights>
