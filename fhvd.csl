@@ -14,7 +14,7 @@ TODO:
     <category field="social_science"/>
 	<summary>
 	  Diese Implementation deckt folgende Punkte des eigentlichen Zitationsstils NICHT ab:
-	  (1) Bei Journals soll die Heftnummer angegeben werden, wenn "die Seiten des Jahrgangs / des Bandes nicht durchnummeriert sind". Dies geschieht hier NICHT automatisch. Standardmäßig wird Jahr anstatt Band ausgegeben.
+	  (1) Bei Journals soll die Heftnummer angegeben werden, wenn "die Seiten des Jahrgangs / des Bandes nicht durchnummeriert sind". Dies geschieht hier NICHT automatisch. Standardmäßig wird die Heftnummer ausgegeben. Um dies steuern zu können, kann das Feld in Zotero leer gelassen werden. Wenn verfügbar, wird immer Jahr anstatt Band ausgegeben.
 	  (2) Dieser Still sortiert mehrere Einträge in einer Fußnote NICHT automatisch danach, ob es sich um Rechtsquellen handelt, wie eigentlich gefordert. Dies lässt sich stattdessen in Zotero beim Einfügen der Quellen kontrollieren.
 	  (3) Beim Einfügen von Fußnoten via Zotero muss IMMER eine konkrete Fundstelle mitangegeben werden. Dies geschieht NICHT automatisch. Die Angabe erfolgt als "S. 30f." oder "S. 30ff."
 	  (4) Bei Quellen des gleichen Autors in einer Fußnote wird NICHT automatisch "ders." oder "dies." verwendet.
@@ -22,9 +22,9 @@ TODO:
 	  (6) Die Abkürzung "Ebd." wird NICHT verwendet. Dies wäre möglich, wenn zwei aufeinander folgende Fußnoten die genau gleiche Quelle (samt Fundstelle) hätten.
 	  (7) Die URL einer Webseite sollte in einer Fußnote abgekürzt werden. Dies geschieht NICHT automatisch (da zotero kein Feld short-url hat).
 	  (8) Die Quellentypen Loseblattsammlung und E-Book sind NICHT definiert.
-	  Diese Implementation weicht vom Beispiel für Sammelbände ab, insofern als dass die Jahreszahl der konsistenzhalber gleich wie bei anderen Einträgen formatiert wird, und nicht in Klammern.
+	  Diese Implementation weicht vom Beispiel für Sammelbände ab, insofern als dass die Jahreszahl der Konsistenz halber gleich wie bei anderen Einträgen formatiert wird, und nicht in Klammern.
 	</summary>
-    <updated>2024-04-11T22:17:31+00:00</updated>
+    <updated>2025-03-21T17:00:00+00:00</updated>
     <rights license="https://creativecommons.org/licenses/by-nc/4.0/">This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License</rights>
   </info>
   <!-- ======== LOCALE ======== -->
@@ -39,6 +39,7 @@ TODO:
       <term name="editor" form="short">Hrsg.</term>
       <term name="edition" form="long">Auflage</term>
 	  <term name="volume" form="long">Band</term>
+      <term name="issue" form="long">Heft</term> 
       <term name="no date">o. J.</term>
 	  <term name="anonymous">o. V.</term>
     </terms>
@@ -88,20 +89,16 @@ TODO:
     </choose>
   </macro>
   <macro name="volume">
-	<choose>
-	  <if type="article-journal">
-        <number variable="volume" form="numeric"/>
-	  </if>
-	  <else-if type ="chapter book">
-	    <group delimiter=" ">
-          <number variable="volume" form="ordinal"/>
-          <label text-case="capitalize-first" variable="volume" form="long"/>
-	    </group>
-	  </else-if>
-	</choose>
+    <group delimiter=" ">
+      <label text-case="capitalize-first" variable="volume" form="long"/>
+      <number variable="volume" form="numeric"/>
+    </group>
   </macro>
   <macro name="issue">
-	<number variable="issue"/>
+    <group delimiter=" ">
+      <label text-case="capitalize-first" variable="issue" form="long"/>
+	  <number variable="issue" form="numeric"/>
+    </group>
   </macro>
   <macro name="anon">
     <choose>
@@ -205,7 +202,7 @@ TODO:
     </layout>
   </citation>
   <!-- ======== BIBLIOGRAPHY ======== -->
-  <bibliography >
+  <bibliography>
     <sort>
       <key macro="author"/>
       <key macro="date"/>
@@ -238,9 +235,14 @@ TODO:
 		      <text variable="container-title" form="long"/>
 			</group>
 			<text macro="year-date"/>
-			<!-- volume, issue only for some obscure case -->
-			<!-- <text macro="volume"/>
-			<text macro="issue"/> -->
+			<!-- volume, only if year not available -->
+            <choose>
+              <if variable="issued" match="none">
+                <text macro="volume"/>
+              </if>
+            </choose>
+			<!-- issue, always; don't give field "issue" if year/volume continue same page numbering -->
+            <text macro="issue"/>
 			<text macro="pages"/>
 		  </else-if>
 		  <else-if type="webpage">

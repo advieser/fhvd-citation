@@ -11,7 +11,7 @@ Dieser Stil definiert die Folgenden Eintragsarten:
 - **Webseite**
 
 Diese Implementation deckt folgende Punkte der eigentlichen Spezifikation NICHT ab:
-1. Bei Journals soll die Heftnummer angegeben werden, wenn "die Seiten des Jahrgangs / des Bandes nicht durchnummeriert sind". Dies geschieht hier NICHT automatisch. Standardmäßig wird Jahr anstatt Band ausgegeben.
+1. Bei Journals soll die Heftnummer angegeben werden, wenn "die Seiten des Jahrgangs / des Bandes nicht durchnummeriert sind". Dies geschieht hier NICHT automatisch. Standardmäßig wird die Heftnummer ausgegeben. Um dies steuern zu können, kann das Feld in Zotero leer gelassen werden. Wenn verfügbar, wird immer Jahr anstatt Band ausgegeben.
 2. Dieser Still sortiert mehrere Einträge in einer Fußnote NICHT automatisch danach, ob es sich um Rechtsquellen handelt, wie eigentlich gefordert. Dies lässt sich stattdessen in Zotero beim Einfügen der Quellen kontrollieren.
 3. Beim Einfügen von Fußnoten via Zotero muss IMMER eine konkrete Fundstelle mitangegeben werden. Dies geschieht NICHT automatisch. Die Angabe erfolgt als "S. 30f." oder "S. 30ff."
 4. Bei Quellen des gleichen Autors in einer Fußnote wird NICHT automatisch "ders." oder "dies." verwendet.
@@ -33,3 +33,7 @@ Er definiert die folgenden Eintragsarten:
 
 Eine Anleitung kann [hier](Anleitung_VwR-FHVD.pdf) gefunden werden.
 
+# Ressourcen
+- [CSL 1.0.2 specification](https://docs.citationstyles.org/en/stable/specification.html)
+- [CSL validator](https://validator.citationstyles.org/)
+- [Zotero to CSL fields mappings](https://rawcdn.githack.com/POBrien333/zot2csl/1ebc3b5199b4e256d86b8feaa068a51d710f9e88/zot2csl_html/zotero_schema_output.html)
