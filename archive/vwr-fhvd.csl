@@ -93,20 +93,16 @@
     </choose>
   </macro>
   <macro name="volume">
-	<choose>
-	  <if type="article-journal">
-        <number variable="volume" form="numeric"/>
-	  </if>
-	  <else-if type ="chapter book">
-	    <group delimiter=" ">
-          <number variable="volume" form="ordinal"/>
-          <label text-case="capitalize-first" variable="volume" form="long"/>
-	    </group>
-	  </else-if>
-	</choose>
+    <group delimiter=" ">
+      <label text-case="capitalize-first" variable="volume" form="long"/>
+      <number variable="volume" form="numeric"/>
+    </group>
   </macro>
   <macro name="issue">
-	<number variable="issue"/>
+    <group delimiter=" ">
+      <label text-case="capitalize-first" variable="issue" form="long"/>
+	  <number variable="issue" form="numeric"/>
+    </group>
   </macro>
   <!-- Dates -->
   <macro name="accessed">
@@ -294,6 +290,14 @@
 				  <text variable="container-title" form="long"/>
 				</group>
 				<text macro="year-date"/>
+							<!-- volume, only if year not available -->
+				<choose>
+					<if variable="issued" match="none">
+						<text macro="volume"/>
+					</if>
+				</choose>
+				<!-- issue, always; don't give field "issue" if year/volume continue same page numbering -->
+				<text macro="issue"/>
 				<text macro="pages"/>
 			  </else-if>
 			  <!-- Webseite -->
