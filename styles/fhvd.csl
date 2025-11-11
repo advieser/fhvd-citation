@@ -2,7 +2,6 @@
 <!-- 
 TODO: 
 (1) check ob addsuffixyear in citation auch in bibliographie auftaucht
-(2) check ob bei mehreren quellen in fußnote, sie richtig getrennt werden; sonst delimiter und group anpassen
 (3) check ob uneindeutigkeit durch gleichen nachname in citation aufgelöst wird (disambiguation)
 -->
 <style xmlns="http://purl.org/net/xbiblio/csl" class="note" version="1.0" demote-non-dropping-particle="sort-only" default-locale="de-DE">
@@ -24,7 +23,7 @@ TODO:
 	  (8) Die Quellentypen Loseblattsammlung und E-Book sind NICHT definiert.
 	  Diese Implementation weicht vom Beispiel für Sammelbände ab, insofern als dass die Jahreszahl der Konsistenz halber gleich wie bei anderen Einträgen formatiert wird, und nicht in Klammern.
 	</summary>
-    <updated>2025-03-21T17:00:00+00:00</updated>
+    <updated>2025-11-11T17:00:00+00:00</updated>
     <rights license="https://creativecommons.org/licenses/by-nc/4.0/">This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License</rights>
   </info>
   <!-- ======== LOCALE ======== -->
@@ -36,6 +35,7 @@ TODO:
 	    <term name="retrieved">Stand</term>
       <term name="ibid">ebd.</term>
       <term name="page" form="short">S.</term>
+      <term name="issue" form="short">Rn.</term>
       <term name="editor" form="short">Hrsg.</term>
       <term name="edition" form="long">Auflage</term>
       <term name="volume" form="long">Band</term>
@@ -45,6 +45,15 @@ TODO:
     </terms>
   </locale>
   <!-- ======== MACROS ======== -->
+  <!-- Unbekannter Autor -->
+  <macro name="anon">
+    <choose>
+      <if variable="author editor translator" match="none">
+        <text term="anonymous"/>
+      </if>
+    </choose>
+  </macro>
+  <!-- Voller Autor-->
   <macro name="author">
     <names variable="author">
       <name name-as-sort-order="all" sort-separator=", " delimiter=", " delimiter-precedes-last="never"/>
@@ -54,6 +63,7 @@ TODO:
     </names>
     <text macro="anon"/>
   </macro>
+  <!-- Abgekürzter Autor -->
   <macro name="author-short">
     <names variable="author">
       <name form="short" delimiter=", " initialize-with=". " delimiter-precedes-last="never" sort-separator=","/>
@@ -63,18 +73,21 @@ TODO:
 	  </names>
     <text macro="anon"/>
   </macro>
+  <!-- Voller Herausgeber -->
   <macro name="editor">
     <names variable="editor" delimiter=", ">
       <name name-as-sort-order="all" sort-separator=", " delimiter-precedes-last="never" form="long"/>
       <label form="short" prefix=" (" suffix=")"/>
     </names>
   </macro>
+  <!-- Abgekürzter Herausgeber -->
   <macro name="editor-short">
-	<names variable="editor" delimiter=", ">
+	  <names variable="editor" delimiter=", ">
       <name form="short" initialize-with=". " delimiter-precedes-last="never" sort-separator=","/>
-	  <label form="short" prefix=" (" suffix=")"/>
+	    <label form="short" prefix=" (" suffix=")"/>
     </names>
   </macro>
+  <!-- Auflage -->
   <macro name="edition">
     <choose>
       <if is-numeric="edition">
@@ -88,25 +101,21 @@ TODO:
       </else>
     </choose>
   </macro>
+  <!-- Band -->
   <macro name="volume">
     <group delimiter=" ">
       <label text-case="capitalize-first" variable="volume" form="long"/>
       <number variable="volume" form="numeric"/>
     </group>
   </macro>
+  <!-- Heftnummer -->
   <macro name="issue">
     <group delimiter=" ">
       <label text-case="capitalize-first" variable="issue" form="long"/>
-	  <number variable="issue" form="numeric"/>
+	    <number variable="issue" form="numeric"/>
     </group>
   </macro>
-  <macro name="anon">
-    <choose>
-      <if variable="author editor translator" match="none">
-        <text term="anonymous"/>
-      </if>
-    </choose>
-  </macro>
+  <!-- Abrufdatum -->
   <macro name="accessed">
     <text term="accessed"/>
     <date variable="accessed" prefix=" ">
@@ -115,10 +124,11 @@ TODO:
       <date-part form="long" name="year"/>
     </date>
   </macro>
+  <!-- Volles Datum -->
   <macro name="date">
     <choose>
       <if type="webpage">
-		<text term="retrieved" suffix=": "/>
+		    <text term="retrieved" suffix=": "/>
         <date variable="issued">
           <date-part form="long" name="month" suffix=" "/>
           <date-part form="long" name="year"/>
@@ -133,74 +143,105 @@ TODO:
       </else>
     </choose>
   </macro>
+  <!-- Datum als Jahr -->
   <macro name="year-date">
     <choose>
-	  <if variable="issued">
-		<choose>
-          <if type="webpage">
-            <date variable="issued">
-              <date-part name="year"/>
-			</date>
-          </if>
-          <else>
-            <date variable="issued">
-              <date-part name="year"/>
-            </date>
-          </else>
-	    </choose>
-	  </if>
-	  <else>
-	    <text term="no date"/>
-	  </else>
-	</choose>
+	    <if variable="issued">
+        <date variable="issued">
+          <date-part name="year"/>
+        </date>
+	    </if>
+	    <else>
+	      <text term="no date"/>
+	    </else>
+	  </choose>
   </macro>
+  <!-- Seitenzahl -->
   <macro name="pages">
     <label variable="locator" form="short" suffix=". " strip-periods="true"/>
     <text variable="page-first" suffix=" ff."/>
   </macro>
+  <!-- Locator -->
+  <macro name="existing-locator">
+    <choose>
+      <if variable="locator">
+        <group delimiter="">
+          <label variable="locator" form="short" suffix=" "/>
+          <text variable="locator"/>
+        </group>
+      </if>
+	  </choose>
+  </macro>
+
   <!-- ======== CITATION ======== -->
   <citation et-al-min="3" et-al-use-first="1" disambiguate-add-givenname="true" initialize-with="true" givenname-disambiguation-rule="all-names" disambiguate-add-year-suffix="true">
     <layout delimiter="; " suffix=".">
-	  <group delimiter=", ">
-	    <text macro="author-short" text-case="capitalize-first"/>
-		<choose>
-		  <if type="article-journal">
-			<group delimiter="">
-		      <text term="in" suffix=": "/>
-		      <text variable="container-title" form="long"/>
-			</group>
-		  </if>
-		</choose>
-	    <text macro="year-date"/>
-	    <choose>
-		  <if type="article-journal" match="none">
-		    <text variable="title" form="short"/>
-		  </if>
-		</choose>
-	    <choose>
-	      <if type="webpage">
-		    <text variable="URL"/>
-		  </if>
-		  <else-if type="chapter">
-			<group delimiter="">
-		      <text term="in" suffix=": "/>
-		      <text macro="editor-short"/>
-			</group>
-			<text variable="container-title" form="long"/> 
-			<!-- change this to short in future, so that the field Kurztitel is used, at least thats the hope, have to check, or its shortened automatically -->
-		  </else-if>
-	    </choose>
-		<choose>
-		  <if variable="locator">
-		    <group delimiter="">
-		      <label variable="locator" form="short" suffix=" "/>
-              <text variable="locator"/>
-			</group>
-		  </if>
-		</choose>
-	  </group>
+	    <group delimiter=", ">
+        <choose>
+          <!-- Buch -->
+          <if type="book">
+            <text macro="author-short" text-case="capitalize-first"/>
+            <text macro="year-date"/>
+            <text variable="title" form="short"/>
+            <text macro="existing-locator"/>
+          </if>
+          <!-- Zeitschriftenartikel -->
+          <else-if type="article-journal paper-conference">
+            <text macro="author-short" text-case="capitalize-first"/>
+            <group delimiter="">
+              <text term="in" suffix=": "/>
+              <text variable="container-title" form="long"/>
+            </group>
+            <text macro="year-date"/>
+            <text macro="existing-locator"/>
+          </else-if>
+          <!-- Webseite -->
+          <else-if type="webpage">
+            <text macro="author-short" text-case="capitalize-first"/>
+            <text macro="year-date"/>
+            <text variable="title" form="short"/>   
+            <text variable="URL"/>
+            <text macro="existing-locator"/>
+          </else-if>
+          <!-- Buchteil -->
+          <else-if type="chapter">
+            <text macro="author-short" text-case="capitalize-first"/>
+            <text macro="year-date"/>
+            <text variable="title" form="short"/>  
+            <group delimiter="">
+              <text term="in" suffix=": "/>
+              <text macro="editor-short"/>
+            </group>
+            <text variable="container-title" form="short"/>
+            <text macro="existing-locator"/>
+          </else-if>
+          <!-- Teil eines Kommentars-->
+          <else-if type="entry-encyclopedia">
+            <text macro="author-short" text-case="capitalize-first"/>
+            <group delimiter="">
+                <text term="in" suffix=": "/>
+                <text macro="editor-short"/>
+            </group>
+            <text variable="container-title" form="long"/> 
+            <group delimiter=" ">
+              <text variable="title" form="long"/>
+              <text macro="existing-locator"/>
+            </group>
+          </else-if>
+		      <!-- Court Decision: Court, Urteil/Beschluss vom Date, File number, LOCATOR, cited from -->
+		      <else-if type="legal_case">
+            <text variable="authority"/>
+            <text variable="title" form="short"/>
+  	        <text macro="date" prefix=" vom "/>
+            <text variable="number"/>
+            <text macro="existing-locator"/>
+            <text variable="note" prefix="zitiert nach "/> 
+          </else-if>
+        </choose>
+	    </group>
     </layout>
   </citation>
+
   <!-- ======== BIBLIOGRAPHY ======== -->
   <bibliography>
     <sort>
@@ -208,53 +249,58 @@ TODO:
       <key macro="date"/>
     </sort>
     <layout>
-	  <group delimiter=", " suffix=".">
-	    <text macro="author"/>
-  	    <text variable="title" form="long"/>
-		<choose>
-		  <if type="book">
-			<text macro="volume"/>
-  	        <text macro="edition"/>
-	        <text macro="year-date"/>
-		  </if>
-		  <else-if type="chapter">
-		    <group delimiter="">
-		      <text term="in" suffix=": "/>
-		      <text macro="editor"/>
-			</group>
-			<text variable="container-title"/>
-			<text macro="pages"/>
-			<text macro="volume"/>
-			<text variable="publisher-place"/>
-			<text macro="edition"/>
-	        <text macro="year-date"/>
-		  </else-if>
-		  <else-if type="article-journal paper-conference">
-			<group delimiter="">
-		      <text term="in" suffix=": "/>
-		      <text variable="container-title" form="long"/>
-			</group>
-			<text macro="year-date"/>
-			<!-- volume, only if year not available -->
+      <choose>
+        <!-- Urteile/Beschlüsse sollten nicht im Literaturverzeichnis sein -->
+	      <if type="legal_case" match="none">
+          <group delimiter=", " suffix=".">
+            <text macro="author"/>
+            <text variable="title" form="long"/>
             <choose>
-              <if variable="issued" match="none">
+              <if type="book">
                 <text macro="volume"/>
+                <text macro="edition"/>
+                <text macro="year-date"/>
               </if>
+              <else-if type="chapter entry-encyclopedia">
+                <group delimiter="">
+                  <text term="in" suffix=": "/>
+                  <text macro="editor"/>
+                </group>
+                <text variable="container-title"/>
+                <text macro="pages"/>
+                <text macro="volume"/>
+                <text variable="publisher-place"/>
+                <text macro="edition"/>
+                <text macro="year-date"/>
+              </else-if>
+              <else-if type="article-journal paper-conference">
+                <group delimiter="">
+                  <text term="in" suffix=": "/>
+                  <text variable="container-title" form="long"/>
+                </group>
+                <text macro="year-date"/>
+                <!-- volume, only if year not available -->
+                <choose>
+                  <if variable="issued" match="none">
+                    <text macro="volume"/>
+                  </if>
+                </choose>
+                <!-- issue, always; don't give field "issue" if year/volume continue same page numbering -->
+                <text macro="issue"/>
+                <text macro="pages"/>
+              </else-if>
+              <else-if type="webpage">
+                <text macro="date"/>
+                <text variable="URL"/>
+                <text macro="accessed"/>
+              </else-if>
+              <else>
+                <text macro="year-date"/>
+              </else>
             </choose>
-			<!-- issue, always; don't give field "issue" if year/volume continue same page numbering -->
-            <text macro="issue"/>
-			<text macro="pages"/>
-		  </else-if>
-		  <else-if type="webpage">
-		    <text macro="date"/>
-			<text variable="URL"/>
-		    <text macro="accessed"/>
-		  </else-if>
-		  <else>
-		    <text macro="year-date"/>
-		  </else>
-		</choose>
-	  </group>
+          </group>
+        </if>
+      </choose>
     </layout>
   </bibliography>
 </style>

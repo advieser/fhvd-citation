@@ -1,0 +1,445 @@
+{
+  "config": {
+    "id": "36a3b0b5-bad0-4a04-b79b-441c7cef77db",
+    "label": "BetterBibTeX JSON",
+    "preferences": {
+      "ascii": "",
+      "asciiBibLaTeX": false,
+      "asciiBibTeX": true,
+      "autoAbbrev": false,
+      "autoExport": "immediate",
+      "autoExportDelay": 5,
+      "autoExportIdleWait": 10,
+      "autoExportPathReplaceDiacritics": false,
+      "autoExportPathReplaceDirSep": "-",
+      "autoExportPathReplaceSpace": " ",
+      "automaticTags": true,
+      "autoPinDelay": 0,
+      "auxImport": false,
+      "baseAttachmentPath": "/home/keno/googledrive/02 Wissen/01 Zotero",
+      "biblatexExtendedDateFormat": true,
+      "biblatexExtendedNameFormat": true,
+      "biblatexExtractEprint": true,
+      "bibtexEditionOrdinal": false,
+      "bibtexParticleNoOp": false,
+      "bibtexURL": "off",
+      "cache": true,
+      "cacheDelete": false,
+      "cacheRetain": false,
+      "charmap": "",
+      "citeCommand": "cite",
+      "citekeyCaseInsensitive": true,
+      "citekeyFold": true,
+      "citekeyFormat": "auth.lower + shorttitle(3,3) + year",
+      "citekeySearch": true,
+      "citekeyUnsafeChars": "\\\"#%'(),={}~",
+      "csquotes": "",
+      "DOIandURL": "both",
+      "exportBibTeXStrings": "off",
+      "exportBraceProtection": true,
+      "exportSort": "citekey",
+      "exportTitleCase": true,
+      "extraMergeCitekeys": false,
+      "extraMergeCSL": false,
+      "extraMergeTeX": false,
+      "git": "config",
+      "import": true,
+      "importBibTeXStrings": true,
+      "importCaseProtection": "as-needed",
+      "importCitationKey": true,
+      "importDetectURLs": true,
+      "importExtra": true,
+      "importJabRefAbbreviations": true,
+      "importJabRefStrings": true,
+      "importNoteToExtra": "",
+      "importSentenceCase": "on+guess",
+      "importSentenceCaseQuoted": true,
+      "importUnknownTexCommand": "ignore",
+      "itemObserverDelay": 5,
+      "jabrefFormat": 0,
+      "jieba": false,
+      "keyConflictPolicy": "keep",
+      "keyScope": "library",
+      "kuroshiro": false,
+      "language": "langid",
+      "mapMath": "",
+      "mapText": "",
+      "packages": "",
+      "parseParticles": true,
+      "patchDates": "dateadded=dateAdded, date-added=dateAdded, datemodified=dateModified, date-modified=dateModified",
+      "postscript": "",
+      "postscriptOverride": "",
+      "preferencesOverride": "",
+      "qualityReport": false,
+      "quickCopyEta": "",
+      "quickCopyMode": "latex",
+      "quickCopyOrgMode": "zotero",
+      "quickCopyPandocBrackets": false,
+      "quickCopySelectLink": "zotero",
+      "rawImports": false,
+      "rawLaTag": "#LaTeX",
+      "relativeFilePaths": false,
+      "separatorList": "and",
+      "separatorNames": "and",
+      "skipFields": "",
+      "skipWords": "a,ab,aboard,about,above,across,after,against,al,along,amid,among,an,and,anti,around,as,at,before,behind,below,beneath,beside,besides,between,beyond,but,by,d,da,das,de,del,dell,dello,dei,degli,della,dell,delle,dem,den,der,des,despite,die,do,down,du,during,ein,eine,einem,einen,einer,eines,el,en,et,except,for,from,gli,i,il,in,inside,into,is,l,la,las,le,les,like,lo,los,near,nor,of,off,on,onto,or,over,past,per,plus,round,save,since,so,some,sur,than,the,through,to,toward,towards,un,una,unas,under,underneath,une,unlike,uno,unos,until,up,upon,versus,via,von,while,with,within,without,yet,zu,zum",
+      "startupProgress": "popup",
+      "strings": "",
+      "stringsOverride": "",
+      "verbatimFields": "url,doi,file,pdf,ids,eprint,/^verb[a-z]$/,groups,/^citeulike-linkout-[0-9]+$/, /^bdsk-url-[0-9]+$/, keywords",
+      "warnBulkModify": 10,
+      "warnTitleCased": false
+    },
+    "options": {
+      "Items": true,
+      "Normalize": false,
+      "Preferences": true,
+      "cache": true,
+      "exportDir": "/home/keno/repos/fhvd-citation/tests",
+      "exportFileData": false,
+      "exportNotes": false,
+      "exportPath": "/home/keno/repos/fhvd-citation/tests/refs.json",
+      "keepUpdated": false,
+      "worker": true
+    }
+  },
+  "version": {
+    "zotero": "7.0.11",
+    "bbt": "7.0.5"
+  },
+  "collections": {},
+  "items": [
+    {
+      "key": "EB9MXZCP",
+      "version": 5785,
+      "itemType": "case",
+      "abstractNote": "Erfolgreiche Verfassungsbeschwerde gegen arbeitsgerichtliche Entscheidung zum kirchlichen Arbeitsrecht",
+      "language": "de",
+      "url": "https://www.bundesverfassungsgericht.de/SharedDocs/Entscheidungen/DE/2025/09/rs20250929_2bvr093419.html",
+      "accessDate": "2025-11-07T12:08:01Z",
+      "extra": "https://www.bundesverfassungsgericht.de",
+      "caseName": "Beschluss",
+      "court": "BVerfG",
+      "dateDecided": "29 09 2025",
+      "docketNumber": "2 BvR 934/19",
+      "creators": [],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2025-11-10T15:14:11Z",
+      "dateModified": "2025-11-11T16:23:32Z",
+      "uri": "http://zotero.org/users/10571121/items/EB9MXZCP",
+      "itemID": 7237,
+      "attachments": [
+        {
+          "key": "B9B4C6ZZ",
+          "version": 5776,
+          "itemType": "attachment",
+          "title": "Snapshot",
+          "url": "https://www.bundesverfassungsgericht.de/SharedDocs/Entscheidungen/DE/2025/09/rs20250929_2bvr093419.html",
+          "accessDate": "2025-11-07T12:08:06Z",
+          "parentItem": "EB9MXZCP",
+          "linkMode": "linked_url",
+          "contentType": "text/html",
+          "charset": "",
+          "tags": [],
+          "relations": {},
+          "dateAdded": "2025-11-10T15:14:11Z",
+          "dateModified": "2025-11-10T15:14:11Z",
+          "uri": "http://zotero.org/users/10571121/items/B9B4C6ZZ"
+        }
+      ],
+      "notes": [],
+      "citationKey": "Beschluss2025",
+      "itemKey": "EB9MXZCP",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/EB9MXZCP"
+    },
+    {
+      "key": "S5GC23AC",
+      "version": 5776,
+      "itemType": "webpage",
+      "title": "BVerfG zur Kirche: Egenberger hat längst nicht verloren",
+      "abstractNote": "Das BVerfG hat im Fall der konfessionslosen Bewerberin ein BAG-Urteil aufgehoben. Es ist dennoch ein erheblicher Einschnitt in das Selbstbestimmungsrecht.",
+      "date": "05.11.2025",
+      "language": "de",
+      "shortTitle": "BVerfG zur Kirche",
+      "url": "https://www.lto.de/recht/hintergruende/h/bverfg-2bvr93419-egenberger-einordnung-selbstbestimmungsrecht-kirche-arbeitnehmer",
+      "accessDate": "2025-11-07T12:13:44Z",
+      "websiteTitle": "Legal Tribune Online",
+      "creators": [
+        {
+          "firstName": "Ulrike",
+          "lastName": "Brune",
+          "creatorType": "author"
+        },
+        {
+          "firstName": "Christoph",
+          "lastName": "Schmitz-Solemann",
+          "creatorType": "author"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2025-11-10T15:14:11Z",
+      "dateModified": "2025-11-10T15:14:11Z",
+      "uri": "http://zotero.org/users/10571121/items/S5GC23AC",
+      "itemID": 7239,
+      "attachments": [
+        {
+          "key": "I6I3EQ78",
+          "version": 5776,
+          "itemType": "attachment",
+          "title": "Snapshot",
+          "url": "https://www.lto.de/recht/hintergruende/h/bverfg-2bvr93419-egenberger-einordnung-selbstbestimmungsrecht-kirche-arbeitnehmer",
+          "accessDate": "2025-11-07T12:13:48Z",
+          "parentItem": "S5GC23AC",
+          "linkMode": "linked_url",
+          "contentType": "text/html",
+          "charset": "",
+          "tags": [],
+          "relations": {},
+          "dateAdded": "2025-11-10T15:14:11Z",
+          "dateModified": "2025-11-10T15:14:11Z",
+          "uri": "http://zotero.org/users/10571121/items/I6I3EQ78"
+        }
+      ],
+      "notes": [],
+      "citationKey": "bruneBVerfGZurKirche2025",
+      "itemKey": "S5GC23AC",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/S5GC23AC"
+    },
+    {
+      "key": "GF9PNJP3",
+      "version": 5776,
+      "itemType": "bookSection",
+      "title": "Feldexperimentelle Forschung zu ethnischer Diskriminierung auf dem Arbeitsmarkt",
+      "date": "2021",
+      "language": "de",
+      "libraryCatalog": "DOI.org (Crossref)",
+      "url": "https://link.springer.com/10.1007/978-3-658-27789-5",
+      "accessDate": "2025-09-25T12:40:35Z",
+      "rights": "https://www.springernature.com/gp/researchers/text-and-data-mining",
+      "extra": "DOI: 10.1007/978-3-658-27789-5",
+      "place": "Wiesbaden",
+      "publisher": "Springer Fachmedien",
+      "ISBN": "978-3-658-27788-8 978-3-658-27789-5",
+      "edition": "2",
+      "bookTitle": "Handbuch Stress und Kultur: Interkulturelle und kulturvergleichende Perspektiven",
+      "creators": [
+        {
+          "firstName": "Susanne",
+          "lastName": "Veit",
+          "creatorType": "author"
+        },
+        {
+          "firstName": "Tobias",
+          "lastName": "Ringeisen",
+          "creatorType": "editor"
+        },
+        {
+          "firstName": "Petia",
+          "lastName": "Genkova",
+          "creatorType": "editor"
+        },
+        {
+          "firstName": "Frederick T. L.",
+          "lastName": "Leong",
+          "creatorType": "editor"
+        }
+      ],
+      "tags": [
+        {
+          "tag": "Bewältigung",
+          "type": 1
+        },
+        {
+          "tag": "Coping",
+          "type": 1
+        },
+        {
+          "tag": "Gesundheitsverhalten",
+          "type": 1
+        },
+        {
+          "tag": "Intervention",
+          "type": 1
+        },
+        {
+          "tag": "Kulturvergleich",
+          "type": 1
+        },
+        {
+          "tag": "Management",
+          "type": 1
+        },
+        {
+          "tag": "Methode",
+          "type": 1
+        },
+        {
+          "tag": "Prävention",
+          "type": 1
+        },
+        {
+          "tag": "Psychologie",
+          "type": 1
+        },
+        {
+          "tag": "Well-Being",
+          "type": 1
+        }
+      ],
+      "relations": {},
+      "dateAdded": "2025-11-10T15:14:11Z",
+      "dateModified": "2025-11-10T15:14:11Z",
+      "uri": "http://zotero.org/users/10571121/items/GF9PNJP3",
+      "itemID": 7236,
+      "attachments": [],
+      "notes": [],
+      "citationKey": "veitFeldexperimentelleForschungEthnischer2021",
+      "itemKey": "GF9PNJP3",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/GF9PNJP3"
+    },
+    {
+      "key": "LWV2QWNV",
+      "version": 5784,
+      "itemType": "journalArticle",
+      "title": "Arbeitgeberhaftung nach dem AGG infolge des Einsatzes von Algorithmen bei Personalentscheidungen",
+      "abstractNote": "In der und durch die vierte industrielle Revolution (so genannte Industrie 4.0) werden Algorithmen zu einem festen Bestandteil der Arbeitswelt. Immer mehr Aufgaben, die vor wenigen Jahren noch von Menschen ausgeführt wurden, werden von Programmen übernommen. Dies gilt auch für den Bereich der Personalverwaltung. Doch führt das Spannungsverhältnis zwischen der Funktionsweise von Algorithmen und dem Antidiskriminierungsrecht im Bereich des Personalmanagements zu einem Haftungsrisiko des Arbeitgebers nach § AGG § 15 AGG. Ausgehend von einer (rechtswissenschaftlichen Arbeits-)Definition des Begriffs des „Algorithmus“ und dem erwähnten Spannungsverhältnis von deren Arbeitsweise zum Antidiskriminierungsrecht (I.) wird der Frage nachgegangen, ob und unter welchen Voraussetzungen eine Haftung des Arbeitgebers nach § AGG § 15 AGG § 15 Absatz I AGG (II.) und nach § AGG § 15 AGG § 15 Absatz II AGG (III.) im Fall des Einsatzes von Algorithmen gegeben sein kann.",
+      "date": "2018",
+      "pages": "620–625",
+      "publicationTitle": "Neue Zeitschrift für Arbeitsrecht",
+      "issue": "10",
+      "journalAbbreviation": "NZA",
+      "creators": [
+        {
+          "firstName": "Kai",
+          "lastName": "Von Lewinski",
+          "creatorType": "author"
+        },
+        {
+          "firstName": "Raphael",
+          "lastName": "De Barros Fritz",
+          "creatorType": "author"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2025-11-10T15:14:11Z",
+      "dateModified": "2025-11-11T16:13:53Z",
+      "uri": "http://zotero.org/users/10571121/items/LWV2QWNV",
+      "itemID": 7234,
+      "attachments": [],
+      "notes": [],
+      "citationKey": "vonlewinskiArbeitgeberhaftungNachAGG2018a",
+      "itemKey": "LWV2QWNV",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/LWV2QWNV"
+    },
+    {
+      "key": "2CFTUQ5W",
+      "version": 5776,
+      "itemType": "book",
+      "title": "Bestehende und künftige Regelungen des Einsatzes von Algorithmen im HR-Bereich",
+      "date": "2019",
+      "url": "https://algorithmwatch.org/de/wp-content/uploads/2019/10/Gutachten-Algorithmen-im-HR-Bereich-von-Lewinski-2019.pdf",
+      "accessDate": "2025-11-10T11:08:40Z",
+      "creators": [
+        {
+          "firstName": "Kai",
+          "lastName": "Von Lewinski",
+          "creatorType": "author"
+        },
+        {
+          "firstName": "Raphael",
+          "lastName": "De Barros Fritz",
+          "creatorType": "author"
+        },
+        {
+          "firstName": "Katrin",
+          "lastName": "Biermeier",
+          "creatorType": "author"
+        },
+        {
+          "name": "AW AlgorithmWatch gGmbH",
+          "creatorType": "editor"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2025-11-10T15:14:11Z",
+      "dateModified": "2025-11-10T15:14:11Z",
+      "uri": "http://zotero.org/users/10571121/items/2CFTUQ5W",
+      "itemID": 7241,
+      "attachments": [
+        {
+          "key": "CVG66K9J",
+          "version": 5776,
+          "itemType": "attachment",
+          "title": "PDF",
+          "url": "https://algorithmwatch.org/de/wp-content/uploads/2019/10/Gutachten-Algorithmen-im-HR-Bereich-von-Lewinski-2019.pdf",
+          "accessDate": "2025-11-10T11:08:40Z",
+          "parentItem": "2CFTUQ5W",
+          "linkMode": "linked_url",
+          "contentType": "application/pdf",
+          "charset": "",
+          "tags": [],
+          "relations": {},
+          "dateAdded": "2025-11-10T15:14:12Z",
+          "dateModified": "2025-11-10T15:14:12Z",
+          "uri": "http://zotero.org/users/10571121/items/CVG66K9J"
+        }
+      ],
+      "notes": [],
+      "citationKey": "vonlewinskiBestehendeUndKunftige2019",
+      "itemKey": "2CFTUQ5W",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/2CFTUQ5W"
+    },
+    {
+      "key": "N9F4MFA3",
+      "version": 5776,
+      "itemType": "encyclopediaArticle",
+      "title": "DS-GVO Art. 22 Automatisierte Entscheidungen im Einzelfall einschließlich Profiling",
+      "date": "2025",
+      "edition": "53",
+      "encyclopediaTitle": "BeckOK Datenschutzrecht",
+      "creators": [
+        {
+          "firstName": "Kai",
+          "lastName": "Von Lewinski",
+          "creatorType": "author"
+        },
+        {
+          "firstName": "Heinrich Amadeus",
+          "lastName": "Wolff",
+          "creatorType": "editor"
+        },
+        {
+          "firstName": "Stefan",
+          "lastName": "Brink",
+          "creatorType": "editor"
+        },
+        {
+          "firstName": "Antje",
+          "lastName": "von Ungern-Sternberg",
+          "creatorType": "editor"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2025-11-10T15:14:11Z",
+      "dateModified": "2025-11-10T15:14:11Z",
+      "uri": "http://zotero.org/users/10571121/items/N9F4MFA3",
+      "itemID": 7235,
+      "attachments": [],
+      "notes": [],
+      "citationKey": "vonlewinskiDSGVOArt222025",
+      "itemKey": "N9F4MFA3",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/N9F4MFA3"
+    }
+  ]
+}
