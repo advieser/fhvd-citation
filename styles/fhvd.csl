@@ -218,6 +218,7 @@ TODO:
           <!-- Teil eines Kommentars-->
           <else-if type="entry-encyclopedia">
             <text macro="author-short" text-case="capitalize-first"/>
+            <text macro="year-date"/>
             <group delimiter="">
                 <text term="in" suffix=": "/>
                 <text macro="editor-short"/>

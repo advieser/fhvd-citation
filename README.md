@@ -8,6 +8,7 @@ Dieser Stil definiert die Folgenden Eintragsarten:
 - **Buch** für Kommentare und Lehrbücher
 - **Buchteil** für Teile von Herausgeberwerken
 - **Zeitschriftenartikel** (und Conference Proceedings)
+- **Enzyklopädieeintrag** für Teile von Kommentaren
 - **Webseite**
 
 Diese Implementation deckt folgende Punkte der eigentlichen Spezifikation NICHT ab:
