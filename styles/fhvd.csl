@@ -212,7 +212,10 @@ TODO:
               <text term="in" suffix=": "/>
               <text macro="editor-short"/>
             </group>
+            <!-- NOTE: To pass a short container-title in Zotero, use the Extra field and write "container-title-short: Your title" -->
+            <!--
             <text variable="container-title" form="short"/>
+            -->
             <text macro="existing-locator"/>
           </else-if>
           <!-- Teil eines Kommentars-->
