@@ -250,7 +250,7 @@ TODO:
   <bibliography>
     <sort>
       <key macro="author"/>
-      <key macro="year-date" sort="descending"/>
+      <key macro="year-date" sort="ascending"/>
     </sort>
     <layout>
       <choose>
